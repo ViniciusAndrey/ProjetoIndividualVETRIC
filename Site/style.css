@@ -1,0 +1,169 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    background-color: white;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #010326;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.logo {
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.titulo{
+    margin-right: 1000px;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 700px;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+}
+
+.header .container .navbar  .btn1 {
+    background-color: #F2E205;
+}
+
+.banner {
+    padding: 40px 20px 30px 10px;
+    color: #fff;
+    height: 800px;
+    background-image: url(ProjetoIndividual.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header ul #aqui {
+    font-weight: 1000;
+    color: #32b9cd;
+}
+
+.banner .container{
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    display: flex;
+}
+
+.banner .container p {
+    font-size: 90px;
+    width: 50%;
+}
+
+.banner .container p span {
+    font-weight: bold;
+}
+
+.social{
+    background-color: white;
+    padding: 40px 0;
+}
+
+.social .container{
+    justify-content: space-between;
+}
+
+.card{
+    width: 150px;
+    text-align: center;
+}
+
+.card img{
+    width: 100px;
+}
+
+.card h4 {
+    font-size: 24px;
+}
+
+.footer {
+    height: 100px;
+    background-color: rgb(14, 186, 253);
+}
+
+.footer .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.footer .container p {
+    color: #fff;
+}
+
+.login .container {
+    justify-content: center;
+    align-items: center;
+    background-image: url(imagens/bg-jelly-fish-para_outras_pags.png);
+    background-size: cover;
+    height: 75vh;
+}
+
+.card {
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.card h2 {
+    color: palevioletred;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo input {
+    width: 200px;
+    padding: 7px 15px;
+    border: 2px solid #32b9cb;
+}
+
+.formulario button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: palevioletred;
+    color: white;
+    border: none;
+}
+
+.header a {
+    text-decoration: none;
+    color: #e3b062;
+    cursor: pointer;
+}
+
+.agora {
+    font-weight: 800;
+}
