@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 90px;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .80px;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #ff0000;
+    border-radius: 50px;
+}
+
+body{
+    background-color: #010326;
+}
+
+section{
+    padding:20px 7%;
+}
+
+.btn{
+    width: 40%;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 17px;
+    color:black;
+    border-radius: 40px;
+    background: #F2E205;
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .20px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px 7%;
+    border-bottom: .10px solid #F2E205;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 50px;
+}
+
+.header .navbar a{
+    margin:0 10px;
+    font-size: 16px;
+    color:#fff;
+}
+
+.header .navbar a:hover{
+    color: #F2E205;
+    border-bottom: .10px solid #F2E205;
+    padding-bottom: .50px;
+}
+
+#menu-btn{
+    display: none;
+}
+
+.inicio{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:url(../img/fundo2.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.inicio .conteudo{
+    max-width: 600px;
+}
+
+.inicio .conteudo h2{
+    font-size: 80px;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+.inicio .conteudo p{
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding:10px 0;
+    color:#eee;
+}
+
+.sobre{
+    min-height: 80vh;
+    background: linear-gradient(-60deg, #fad75b, #fbe184, #fdebad, #fef5d6, #ffffff);
+    background-size: 600% 600%;
+    animation: Animacao 10s ease infinite;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sobre .sobre1 {
+    max-width: 800px;
+}
+
+.sobre .sobre1 h3 {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.sobre .sobre1 p {
+    font-size: 20px;
+    line-height: 1.4;
+    padding:1rem 0;
+    color:black;
+}
+
+.sobre .imagem{
+    width: 400px;
+}
+
+.sobre .imagem img{
+    box-shadow: 9px 15px 10px rgba(50, 50, 50, 0.77);
+    border-radius: 30px;
+    margin-left: 400px;
+    width: 100%;
+}
+
+.como{
+    min-height: 80vh;
+    background-color: #010326;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.como1 {
+    margin-left: 300px;
+}
+
+.como .imagem2 {
+    width: 500px;
+}
+
+.como .como1 {
+    max-width: 1000px;
+}
+
+.como .imagem2 img{
+    box-shadow: 9px 15px 10px rgba(0, 0, 0, 0.77);
+    border-radius: 30px;
+    width: 400px;
+}
+
+.como .como1 h2 {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.como .como1 p {
+    font-size: 20px;
+    line-height: 1.8;
+    padding:1rem 0;
+    color:white;
+}
+
+/* FIM COMO  */
+
+.cards{
+    background-color: #fad75b;
+    text-align: center;
+    padding: 5%;
+}
+
+.cards h1 {
+    color: white;
+    font-size: 100px;
+    margin-bottom: 100px;
+}
+
+.servicos {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.card img {
+    width: 100px;
+    height: 87px;
+}
+
+.card {
+    background-color: white;
+    width: 400px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding: 60px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 9px 15px 10px rgba(50, 50, 50, 0.77);
+    flex-direction: column;
+}
+
+.card p {
+    padding-top: 10px;
+}
+
+@keyframes Animacao {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
