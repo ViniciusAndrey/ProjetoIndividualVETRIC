@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Inicio | VETRIC</title>
 </head>
 
@@ -25,8 +25,8 @@
             <a href="#cards">Serviços</a>
             <a href="#contato">Contato</a>
             <a href="#">|</a>
-            <a href="#">LOGIN</a>
-            <a href="#">CADASTRO</a>
+            <a href="login.html">LOGIN</a>
+            <a href="cadastro.html">CADASTRO</a>
         </nav>
 
     </header>
@@ -38,8 +38,8 @@
     <section class="inicio" id="inicio">
 
         <div class="conteudo">
-            <h2>Sempre <br> <span>Conectado</span></h2>
-            <p>A Vetric é uma startup que busca mudar a vida das pessoas com investimentos na bolsa de valores..</p>
+            <h2 class="area1">Sempre <br> <span>Conectado</span></h2>
+            <p class="area1">A Vetric é uma startup que busca mudar a vida das pessoas com investimentos na bolsa de valores..</p>
             <a href="#" class="btn">Saiba Mais</a>
         </div>
 
@@ -52,8 +52,8 @@
     <section class="sobre" id="sobre">
 
         <div class="sobre1">
-            <h3>A Vetric é uma startup que busca mudar sua vida com investimentos na bolsa de valores</h3>
-            <p>Site construído para melhorar sua vida finaceira, A Vetric está trabalhando para trazer a você uma melhor
+            <h3 class="area2">A Vetric é uma startup que busca mudar sua vida com investimentos na bolsa de valores</h3>
+            <p class="area2">Site construído para melhorar sua vida finaceira, A Vetric está trabalhando para trazer a você uma melhor
                 experiencia com o mercado financeiro</p>
         </div>
 
@@ -74,8 +74,8 @@
         </div>
 
         <div class="como1">
-            <h2>Como posso <span>investir</span>?</h2>
-            <p>É Simples, basta fazer um cadastro em nosso site para ter acesso a todos os tipos e graficos de
+            <h2 class="area3">Como posso <span>investir</span>?</h2>
+            <p class="area3">É Simples, basta fazer um cadastro em nosso site para ter acesso a todos os tipos e graficos de
                 investimento.
 
                 <b>A Vetric pode conectar você a bolsa de valores em apenas alguns CLICKS</b>
@@ -95,24 +95,24 @@
             <div class="card">
                 <img src="img/check.png" alt="">
                 <br>
-                <h2>Monitoramento dos Sensores</h2>
-                <p>A temperatura dos motores dos aviões será capturada atraves de um sensor ligado a um Arduino que ira
+                <h2 class="area4">Monitoramento dos Sensores</h2>
+                <p class="area4">A temperatura dos motores dos aviões será capturada atraves de um sensor ligado a um Arduino que ira
                     armazenar esses dados.</p>
             </div>
 
             <div class="card">
                 <img src="img/dinheiro.png" alt="">
                 <br>
-                <h2>Armazenamento dos dados</h2>
-                <p>Os dados seram armazenados em um banco de dados para que posteriormente o cliente consiga fazer a
+                <h2 class="area4">Armazenamento dos dados</h2>
+                <p class="area4">Os dados seram armazenados em um banco de dados para que posteriormente o cliente consiga fazer a
                     vizualização dos mesmos. lorem</p>
             </div>
 
             <div class="card">
                 <img src="img/painel.png" alt="">
                 <br>
-                <h2>Análise do mercado</h2>
-                <p>Com base no mercado, iremos analisar qual o melhor investimento para o seu negocio</p>
+                <h2 class="area4">Análise do mercado</h2>
+                <p class="area4">Com base no mercado, iremos analisar qual o melhor investimento para o seu negocio</p>
             </div>
         </div>
         </div>
@@ -143,3 +143,27 @@
 </body>
 
 </html>
+
+<script>
+
+    window.sr = ScrollReveal({ reset: true });
+
+    sr.reveal('.area1', { duration: 1000 });
+
+
+    sr.reveal('.area2', {
+        rotate:{x: 0, y: 80, z: 0},
+        duration: 2000
+    });
+
+    sr.reveal('.area3', {
+        rotate:{x: 0, y: 80, z: 0},
+        duration: 2000
+    });
+
+    sr.reveal('.area4', {
+        rotate:{x: 0, y: 80, z: 0},
+        duration: 2000
+    });
+
+</script>
