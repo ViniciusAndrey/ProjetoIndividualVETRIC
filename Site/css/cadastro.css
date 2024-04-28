@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px 7%;
+    border-bottom: .10px solid #F2E205;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 50px;
+}
+
+.header .navbar a{
+    margin:0 10px;
+    font-size: 16px;
+    color:#fff;
+}
+
+.header .navbar a:hover{
+    color: #F2E205;
+    border-bottom: .10px solid #F2E205;
+    padding-bottom: .50px;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background: #000029;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-esquerda {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-esquerda, h1 {
+    font-size: 3vh;
+    color: #fad75b;
+}
+
+.imagem-dash {
+    width: 35vw;
+}
+
+.login-direita {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #f9be65;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.77);;
+}
+
+.card-login > h1 {
+    font-size: 50px;
+    color: #000029;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textos > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fbd494;
+    color: black;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textos > label {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.textos > input::placeholder {
+    color: black;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #000029;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px rgba(0, 0, 0, 0.77);
+}
