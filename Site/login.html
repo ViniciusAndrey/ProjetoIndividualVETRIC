@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="shortcut icon" href="img/login.ico" type="image/x-icon">
     <title>Cadastro | Vetric</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
 
     <div class="login">
         <div class="login-esquerda">
-            <h1>Faça Login<br>Para ter pulos em sua vida finaceira</h1>
+            <h1>Faça Login para ter pulos em sua vida finaceira</h1>
             <img src="img/login-animacao.svg" class="imagem-dash">
         </div>
         <div class="login-direita">
@@ -40,9 +41,17 @@
                     <label for="senha">Senha:</label>
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
-                <button class="btn">Login</button>
+                <button class="btn" onclick="redirecionar()">Login</button>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+
+    function redirecionar() {
+        location.href = 'dashboard.html'
+    }
+
+</script>

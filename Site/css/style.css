@@ -273,7 +273,7 @@ span {
     height: 300px;
 }
 
-.area1, .area2, .area3, .area4 {
+.area1, .area2, .area3, .area4 .btn {
     visibility: hidden;
 }
 

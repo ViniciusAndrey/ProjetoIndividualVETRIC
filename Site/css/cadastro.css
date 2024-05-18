@@ -35,7 +35,9 @@ body {
 .login {
     width: 100vw;
     height: 100vh;
-    background: #000029;
+    background: linear-gradient(-45deg, #ddd, #001b58, #2548aa, #1b0d88, #ddd);
+    background-size: 400% 400%;
+    animation: Animacao 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,4 +134,16 @@ body {
     background: white;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px rgba(0, 0, 0, 0.77);
+}
+
+@keyframes Animacao {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }

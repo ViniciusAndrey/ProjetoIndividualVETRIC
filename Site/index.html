@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/index.ico" type="image/x-icon">
     <title>Inicio | Vetric</title>
 </head>
 
@@ -40,7 +41,7 @@
         <div class="conteudo">
             <h2 class="area1">Sempre <br> <span>Conectado</span></h2>
             <p class="area1">A Vetric é uma startup que busca mudar a vida das pessoas com investimentos na bolsa de valores..</p>
-            <a href="#" class="btn">Saiba Mais</a>
+            <a href="#sobre" class="btn">Saiba Mais</a>
         </div>
 
     </section>
@@ -146,22 +147,31 @@
 
 <script>
 
-    window.sr = ScrollReveal({ reset: true });
+    window.animacao = ScrollReveal({ reset: true });
 
-    sr.reveal('.area1', { duration: 1000 });
-
-
-    sr.reveal('.area2', {
+    animacao.reveal('.area1', {
         rotate:{x: 0, y: 80, z: 0},
         duration: 2000
     });
 
-    sr.reveal('.area3', {
+    animacao.reveal('.btn', {
         rotate:{x: 0, y: 80, z: 0},
         duration: 2000
     });
 
-    sr.reveal('.area4', {
+
+
+    animacao.reveal('.area2', {
+        rotate:{x: 0, y: 80, z: 0},
+        duration: 2000
+    });
+
+    animacao.reveal('.area3', {
+        rotate:{x: 0, y: 80, z: 0},
+        duration: 2000
+    });
+
+    animacao.reveal('.area4', {
         rotate:{x: 0, y: 80, z: 0},
         duration: 2000
     });
