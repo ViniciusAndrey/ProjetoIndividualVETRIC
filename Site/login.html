@@ -35,13 +35,17 @@
                 <h1>Login</h1>
                 <div class="textos">
                     <label for="usuario">Usúario:</label>
-                    <input type="text" name="usuario" placeholder="Usúario">
+                    <input id="email_input" type="text" name="usuario" placeholder="Usúario">
                 </div>
                 <div class="textos">
                     <label for="senha">Senha:</label>
-                    <input type="password" name="senha" placeholder="Senha">
+                    <input id="senha_input" type="password" name="senha" placeholder="Senha">
                 </div>
-                <button class="btn" onclick="redirecionar()">Login</button>
+                <button class="btn" onclick="entrar()">Login</button>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                    <div id="div_erros_login"></div>
+                </div>
             </div>
         </div>
     </div>
