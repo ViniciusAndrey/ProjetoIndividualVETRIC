@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 7%;
+    border-bottom: .10px solid #212529;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo1 img{
+    height: 110px;
+}
+
+.header .navbar a{
+    margin:0 10px;
+    font-size: 16px;
+    color:#212529;
+}
+
+.header .navbar a:hover{
+    color: #e8eddf;
+    border-bottom: .10px solid #212529;
+    padding-bottom: .50px;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #4f545a, #212529, #f5cb5c);
+    background-size: 400% 400%;
+    animation: Animacao 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-esquerda {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-esquerda, h1 {
+    font-size: 4vh;
+    color: #212529;
+}
+
+.imagem-dash {
+    width: 35vw;
+}
+
+.login-direita {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alerta_erro{
+  display: flex;
+  justify-content: center;
+}
+
+.card_erro {
+  display: none;
+  color: #212529;
+  width: 230px;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  color: #e8eddf;
+  font-size: 15px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #212529;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.77);;
+}
+
+.card-login > h1 {
+    font-size: 50px;
+    color: #fbd494;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textos > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fbd494;
+    color: black;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textos > label {
+    color: #e8eddf;
+    margin-bottom: 10px;
+}
+
+.textos > input::placeholder {
+    color: 212529;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #000029;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px rgba(0, 0, 0, 0.77);
+}
+
+.btn:hover {
+    background-color: #e8eddf;
+    letter-spacing: 3px;
+    animation-name: botao;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes Animacao {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes botao {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}

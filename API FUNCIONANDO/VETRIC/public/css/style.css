@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 45.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #cfdbd5;
+    border-radius: 5rem;
+}
+
+body {
+    background-color: #242423;
+}
+
+section {
+    padding: 20px 7%;
+}
+
+.span_cor {
+    background: linear-gradient(45deg, #cfdbd5, #e8eddf, #f5cb5c, #D3D3D3);
+    background-size: 400% 100%;
+    animation: Animacao 4s ease infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.saiba_mais {
+    text-decoration: none;
+    font-weight: 800;
+    color: white;
+}
+
+span {
+    color: #f5cb5c;
+}
+
+.btn {
+    width: 40%;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 17px;
+    color: black;
+    border-radius: 40px;
+    background: #f5cb5c;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e8eddf;
+    letter-spacing: 1px;
+    animation-name: botao;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2px 7%;
+    border-bottom: .10px solid #f5cb5c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 110px;
+}
+
+.header .navbar a {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.header .navbar a:hover {
+    color: #f5cb5c;
+    border-bottom: 1px solid #f5cb5c;
+    padding-bottom: 5px;
+}
+
+
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../assets/imgs/fundo2.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.inicio .conteudo {
+    max-width: 600px;
+}
+
+.inicio .conteudo h2 {
+    font-size: 80px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.inicio .conteudo p {
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 10px 0;
+    color: #eee;
+}
+
+.sobre {
+    min-height: 80vh;
+    background: linear-gradient(-60deg, #cfdbd5, #e8eddf, #223843, #b4b4b4);
+    background-size: 600% 600%;
+    animation: Animacao 10s ease infinite alternate;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sobre .sobre1 {
+    max-width: 800px;
+}
+
+.sobre .sobre1 h3 {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.sobre .sobre1 p {
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 1rem 0;
+    color: black;
+}
+
+.sobre .imagem {
+    width: 400px;
+}
+
+.sobre .imagem img {
+    box-shadow: 9px 15px 10px rgba(50, 50, 50, 0.77);
+    border-radius: 30px;
+    margin-left: 400px;
+    width: 100%;
+}
+
+.como {
+    min-height: 80vh;
+    background-color: #242423;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.como1 {
+    margin-left: 300px;
+}
+
+.como .imagem2 {
+    width: 500px;
+}
+
+.como .como1 {
+    max-width: 1000px;
+}
+
+.como .imagem2 img {
+    box-shadow: 9px 15px 10px rgba(0, 0, 0, 0.77);
+    border-radius: 30px;
+    width: 400px;
+}
+
+.como .como1 h2 {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.como .como1 p {
+    font-size: 20px;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: white;
+}
+
+/* FIM COMO  */
+
+.cards {
+    background-color: #e8eddf;
+    text-align: center;
+    padding: 2%;
+}
+
+.cards h1 {
+    color: #242423;
+    font-size: 60px;
+    margin-bottom: 80px;
+}
+
+.servicos {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.imagemcard {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #e8eddf;
+}
+
+.imagemcard:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    padding: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.overlay .caption {
+    font-size: 20px;
+}
+
+#img1 {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contato .contato1 h3 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.contato .contato1 p {
+    font-size: 15px;
+}
+
+
+.contato .contato1 .div_p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: white;
+}
+
+.area1,
+.area2,
+.area3,
+.area4 .btn {
+    visibility: hidden;
+}
+
+@keyframes Animacao {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes botao {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}

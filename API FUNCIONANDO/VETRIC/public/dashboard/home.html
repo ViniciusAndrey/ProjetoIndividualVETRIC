@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/index.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | VETRIC</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="logo">
+                        <img src="./../assets/imgs/av4.png" alt="">
+                        <div class="hello">
+                            <span class="nav-item" id="b_usuario">usuário</span>
+                        </div>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="nav-item">Home</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-ranking-star"></i>
+                        <span class="nav-item">Rank</span>
+                    </a></li>
+                <li><a href="mural.html">
+                        <i class="fas fa-comments"></i>
+                        <span class="nav-item">Comentários</span>
+                    </a></li>
+                <li><a href="edicao-aviso.html">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="nav-item">Ajuda</span>
+                    </a></li>
+                <li><a href="./../index.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Sair</span>
+                    </a></li>
+            </ul>
+        </nav>
+        <section class="main">
+            <div class="main-cima">
+                <h1>investimentos</h1>
+            </div>
+            <div class="investimentos">
+                <div class="card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Bloomberg</h3>
+                    <p>Fundada em 1981, a Bloomberg é um dos maiores nomes do mercado financeiro mundial.</p>
+                    <button onclick="bloomberg()">Ver Site!</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-mug-hot"></i>
+                    <h3>Valor Econômico</h3>
+                    <p>O Valor Econômico é o mais importante veículo de notícias econômicas, políticas, financeiras e de
+                        negócios do Brasil.</p>
+                    <button onclick="vlr()">Ver Site!</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Infomoney</h3>
+                    <p>a Infomoney é uma das fontes de notícias mais conhecidas sobre economia e investimentos do
+                        Brasil.</p>
+                    <button onclick="informoney()">Ver Site!</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Empiricus</h3>
+                    <p>A Empiricus é uma das maiores empresas de análise de investimentos do país, e provavelmente a
+                        mais polêmica. </p>
+                    <button onclick="empiricus()">Ver Site!</button>
+                </div>
+            </div>
+            <section class="games">
+                <h1>Jogos</h1>
+                <div class="caixa">
+                    <ul>
+                        <li class="texto_caixa">Qual vai escolher?</li>
+
+                    </ul>
+                    <div class="course">
+                        <div class="caixa1">
+                            <h3>Quiz</h3>
+                            <p>Perguntas sobre os diversos investimentos</p>
+                            <button>Ir para QUIZ!</button>
+                            <i class="fas fa-gamepad quiz"></i>
+                        </div>
+                        <div class="caixa1">
+                            <h3>2D</h3>
+                            <p>Jogo em 2D</p>
+                            <button>Ir para 2D!</button>
+                            <i class="fas fa-vr-cardboard d"></i>
+                        </div>
+                        <div class="caixa1">
+                            <h3>RANK</h3>
+                            <p>Rank de todas as pessoas que já jogaram</p>
+                            <button>Ver Rank!</button>
+                            <i class="fas fa-ranking-star rank"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function bloomberg() {
+        window.location.href = ("https://www.bloomberg.com/");
+    }
+
+    function vlr() {
+        window.location.href = ("https://valor.globo.com/");
+    }
+
+    function informoney() {
+        window.location.href = ("https://www.infomoney.com.br/");
+    }
+
+    function empiricus() {
+        window.location.href = ("https://www.empiricus.com.br/");
+    }
+
+</script>

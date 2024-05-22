@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AquaTech | Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/cadastro.css" />
+  <link rel="icon" href="./assets/icon/login.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+</head>
+
+<body>
+
+  <header class="header">
+
+    <a href="index.html" class="logo1">
+      <img src="assets/imgs/logo1.png">
+    </a>
+
+    <nav class="navbar">
+      <a href="login.html">LOGIN</a>
+      <a href="cadastro.html">CADASTRO</a>
+    </nav>
+
+  </header>
+
+
+  <div class="login">
+    <div class="login-esquerda">
+      <img src="assets/imgs/cadastro-animacao.svg" class="imagem-dash" style="width: 630px;">
+    </div>
+    <div class="login-direita">
+      <div class="card-login">
+        <h1>Cadastro</h1>
+        <div class="textos">
+          <label for="usuario">Usúario:</label>
+          <input id="nome_input" type="text" name="usuario" placeholder="Usúario">
+        </div>
+        <div class="textos">
+          <label for="usuario">Email:</label>
+          <input id="email_input" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="textos">
+          <label for="senha">Senha:</label>
+          <input id="senha_input" type="password" name="senha" placeholder="Senha">
+        </div>
+        <div class="textos">
+          <label for="senha">Confirmar Senha:</label>
+          <input id="confirmacao_senha_input" type="password" name="senha1" placeholder="Confirmar Senha">
+        </div>
+        <button class="btn" onclick="cadastrar()">Cadastrar</button>
+        <div class="alerta_erro">
+          <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+            <div id="div_erros_login"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function cadastrar() {
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha todos os campos!";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso!";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>
