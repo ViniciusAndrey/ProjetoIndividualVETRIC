@@ -35,9 +35,9 @@ body {
 .login {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(45deg, #4f545a, #212529, #f5cb5c);
+    background: linear-gradient(45deg, #fbd494, #e8eddf, #f5cb5c);
     background-size: 400% 400%;
-    animation: Animacao 10s ease infinite;
+    animation: Animacao 15s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
