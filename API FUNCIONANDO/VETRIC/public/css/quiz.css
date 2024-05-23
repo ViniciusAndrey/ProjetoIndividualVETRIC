@@ -14,9 +14,9 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  background: linear-gradient(-45deg, #001b58, #2548aa, #1b0d88);
+  background: linear-gradient(45deg, #223843, #e8eddf, #223843, #D3D3D3);
   background-size: 400% 400%;
-  animation: Animacao 25s ease infinite;
+  animation: fundo 40s ease infinite;
 }
 
 body h2 {
@@ -24,7 +24,7 @@ body h2 {
 }
 
 main {
-  background-color: white;
+  background-color: #223843;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
@@ -34,6 +34,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 20px 30px 30px 5px #00000088
 }
 
 .header{
@@ -54,11 +55,11 @@ main {
 .header .navbar a{
   margin:0 10px;
   font-size: 16px;
-  color:#fff;
+  color: #F2E205;
 }
 
 .header .navbar a:hover{
-  color: #F2E205;
+  color: #8b8b8b;
   border-bottom: .10px solid #F2E205;
   padding-bottom: .50px;
 }
@@ -70,11 +71,11 @@ main {
   gap: 10px;
 }
 
-.spnQtd {
+.spanQtd {
   text-align: end;
 }
 
-.answers {
+.respostas {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -87,8 +88,8 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #2548aa;
-  color: white;
+  background-color: #e8eddf;
+  color: black;
 }
 
 .finish {
@@ -101,7 +102,20 @@ button {
   text-align: center;
 }
 
-@keyframes Animacao {
+.header .logo1 img{
+  height: 110px;
+}
+
+span {
+  color: white;
+}
+
+h2 .spanV {
+  color: #F2E205;
+  
+}
+
+@keyframes fundo {
   0% {
       background-position: 0% 50%
   }

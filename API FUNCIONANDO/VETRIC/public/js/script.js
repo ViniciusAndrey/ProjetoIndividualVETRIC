@@ -1,27 +1,27 @@
 const question = document.querySelector(".question");
-const answers = document.querySelector(".answers");
-const span_quantidade = document.querySelector(".spnQtd");
+const respostas = document.querySelector(".respostas");
+const span_quantidade = document.querySelector(".spanQtd");
 const textofinal = document.querySelector(".finish span");
-const content = document.querySelector(".content");
-const contentFinish = document.querySelector(".finish");
-const btnRestart = document.querySelector(".finish button");
+const conteudo = document.querySelector(".content");
+const conteudoFinish = document.querySelector(".finish");
+const btnReiniciar = document.querySelector(".finish button");
 
 import questions from "./questao.js";
 
-let indice_atual = 0;
-let questao_correta = 0;
+var indice_atual = 0;
+var questao_correta = 0;
 
-btnRestart.onclick = () => {
-  content.style.display = "flex";
-  contentFinish.style.display = "none";
+btnReiniciar.onclick = () => {
+  conteudo.style.display = "flex";
+  conteudoFinish.style.display = "none";
 
   indice_atual = 0;
   questao_correta = 0;
   carregar_questao();
 };
 
-function proxima_questao(e) {
-  if (e.target.getAttribute("data-correct") === "true") {
+function proxima_questao(atributo) {
+  if (atributo.target.getAttribute("dados-corretos") == "true") {
     questao_correta++;
   }
 
@@ -46,26 +46,26 @@ function finish() {
     ${questao_correta} de ${questions.length}`;
   }
 
-  content.style.display = "none";
-  contentFinish.style.display = "flex";
+  conteudo.style.display = "none";
+  conteudoFinish.style.display = "flex";
 }
 
 function carregar_questao() {
   span_quantidade.innerHTML = `${indice_atual + 1}/${questions.length}`;
   const item = questions[indice_atual];
-  answers.innerHTML = "";
+  respostas.innerHTML = "";
   question.innerHTML = item.question;
 
   item.answers.forEach((answer) => {
     const div = document.createElement("div");
 
     div.innerHTML = `
-    <button class="answer" data-correct="${answer.correct}">
+    <button class="answer" dados-corretos="${answer.correct}">
       ${answer.option}
     </button>
     `;
 
-    answers.appendChild(div);
+    respostas.appendChild(div);
   });
 
   document.querySelectorAll(".answer").forEach((item) => {

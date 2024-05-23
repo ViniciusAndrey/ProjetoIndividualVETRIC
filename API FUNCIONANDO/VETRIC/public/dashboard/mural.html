@@ -39,7 +39,7 @@
                         <i class="fas fa-comments"></i>
                         <span class="nav-item">Comentários</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="ajuda.html">
                         <i class="fas fa-question-circle"></i>
                         <span class="nav-item">Ajuda</span>
                     </a></li>
@@ -61,7 +61,7 @@
                     <div class="card2">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <h3>Título</h3>
-                            <i class="fas fa-mug-hot"></i>
+
                             <input name="titulo" id="titulo" class="titulo" maxlength="100" type="text"
                                 placeholder="Título Comentário">
 
@@ -119,7 +119,6 @@
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
-                finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -127,7 +126,6 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
 
         return false;
@@ -194,7 +192,6 @@
                         var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>" + "<br>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>" + "<br>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>" + "<br>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
@@ -227,14 +224,12 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
-            console.error(resposta);
-            finalizarAguardar();
+            console.error(resposta);    
         });
     }
 
