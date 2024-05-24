@@ -8,31 +8,32 @@ const primeira_coluna = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
 const segunda_coluna = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 const terceira_coluna = ["Z", "X", "C", "V", "B", "N", "M"];
 
-const linha = 6;
+const linha = 5;
 const colunas = 5;
-let currentRow = 0;
-let currentColumn = 0;
-let letreco = "VASC";
-let letrecoMap = {};
-for (let index = 0; index < letreco.length; index++) {
-  letrecoMap[letreco[index]] = index;
+var currentRow = 0;
+var coluna_atual = 0;
+var varreco = "EXITO";
+var varrecoMap = {};
+
+for (var index = 0; index < varreco.length; index++) {
+  varrecoMap[varreco[index]] = index;
 }
 const guesses = [];
 
-for (let rowIndex = 0; rowIndex < linha; rowIndex++) {
-  guesses[rowIndex] = new Array(colunas);
+for (var indice_linha = 0; indice_linha < linha; indice_linha++) {
+  guesses[indice_linha] = new Array(colunas);
   const tileRow = document.createElement("div");
-  tileRow.setAttribute("id", "row" + rowIndex);
+  tileRow.setAttribute("id", "row" + indice_linha);
   tileRow.setAttribute("class", "tile-row");
-  for (let columnIndex = 0; columnIndex < colunas; columnIndex++) {
+  for (var indice_coluna = 0; indice_coluna < colunas; indice_coluna++) {
     const tileColumn = document.createElement("div");
-    tileColumn.setAttribute("id", "row" + rowIndex + "column" + columnIndex);
+    tileColumn.setAttribute("id", "row" + indice_linha + "column" + indice_coluna);
     tileColumn.setAttribute(
       "class",
-      rowIndex === 0 ? "tile-column typing" : "tile-column disabled"
+      indice_linha == 0 ? "tile-column typing" : "tile-column disabled"
     );
     tileRow.append(tileColumn);
-    guesses[rowIndex][columnIndex] = "";
+    guesses[indice_linha][indice_coluna] = "";
   }
   tiles.append(tileRow);
 }
@@ -44,12 +45,12 @@ const checkGuess = () => {
   }
 
   var posicao_atual = document.querySelectorAll(".typing");
-  for (let index = 0; index < colunas; index++) {
-    const letter = guess[index];
-    if (letrecoMap[letter] === undefined) {
+  for (var index = 0; index < colunas; index++) {
+    const varter = guess[index];
+    if (varrecoMap[varter] === undefined) {
         posicao_atual[index].classList.add("wrong")
     } else {
-        if(letrecoMap[letter] === index) {
+        if(varrecoMap[varter] === index) {
             posicao_atual[index].classList.add("right")
         } else {
             posicao_atual[index].classList.add("displaced")
@@ -57,75 +58,75 @@ const checkGuess = () => {
     }
   }
 
-  if(guess === letreco) {
-      window.alert("tu é demais, simplesmente o detetivao do entreterimento!")
+  if(guess === varreco) {
+      window.alert("Você acertou a palavra!")
       return
   } {
       if(currentRow === linha -1) {
-          window.alert("Errrrrrou!")
+          window.alert("Errou!")
       } else {
-          moveToNextRow()
+          nova_rodada()
       }
   }
 };
 
-const moveToNextRow = () => {
+const nova_rodada = () => {
     var typingColumns = document.querySelectorAll(".typing")
-    for (let index = 0; index < typingColumns.length; index++) {
+    for (var index = 0; index < typingColumns.length; index++) {
         typingColumns[index].classList.remove("typing")
         typingColumns[index].classList.add("disabled")
     }
     currentRow++
-    currentColumn=0
+    coluna_atual=0
 
-    const currentRowEl = document.querySelector("#row"+currentRow)
-    var posicao_atual = currentRowEl.querySelectorAll(".tile-column")
-    for (let index = 0; index < posicao_atual.length; index++) {
+    const linha_atual = document.querySelector("#row"+currentRow)
+    var posicao_atual = linha_atual.querySelectorAll(".tile-column")
+    for (var index = 0; index < posicao_atual.length; index++) {
         posicao_atual[index].classList.remove("disabled")
         posicao_atual[index].classList.add("typing")
     }
 }
 
-const handleKeyboardOnClick = (key) => {
-  if (currentColumn === colunas) {
+const indice_teclado = (key) => {
+  if (coluna_atual === colunas) {
     return;
   }
   const currentTile = document.querySelector(
-    "#row" + currentRow + "column" + currentColumn
+    "#row" + currentRow + "column" + coluna_atual
   );
   currentTile.textContent = key;
-  guesses[currentRow][currentColumn] = key;
-  currentColumn++;
+  guesses[currentRow][coluna_atual] = key;
+  coluna_atual++;
 };
 
-const createKeyboardRow = (keys, keyboardRow) => {
+const criar_linha_teclado = (keys, keyboardRow) => {
   keys.forEach((key) => {
     var botao_enter = document.createElement("button");
     botao_enter.textContent = key;
     botao_enter.setAttribute("id", key);
-    botao_enter.addEventListener("click", () => handleKeyboardOnClick(key));
+    botao_enter.addEventListener("click", () => indice_teclado(key));
     keyboardRow.append(botao_enter);
   });
 };
 
-createKeyboardRow(primeira_coluna, primeira_linha);
-createKeyboardRow(segunda_coluna, segunda_linha);
-createKeyboardRow(terceira_coluna, terceira_linha);
+criar_linha_teclado(primeira_coluna, primeira_linha);
+criar_linha_teclado(segunda_coluna, segunda_linha);
+criar_linha_teclado(terceira_coluna, terceira_linha);
 
-const handleBackspace = () => {
-  if(currentColumn === 0){
+const espaco_lidar = () => {
+  if(coluna_atual === 0){
       return
   }
 
-  currentColumn--
-  guesses[currentRow][currentColumn] = ""
-  const tile = document.querySelector("#row"+currentRow+"column"+currentColumn)
+  coluna_atual--
+  guesses[currentRow][coluna_atual] = ""
+  const tile = document.querySelector("#row"+currentRow+"column"+coluna_atual)
   tile.textContent = ""
 };
 
 const botao_espaco = document.createElement("button");
-botao_espaco.addEventListener("click", handleBackspace);
-botao_espaco.textContent = "<";
+botao_espaco.addEventListener("click", espaco_lidar);
+botao_espaco.textContent = "APAGAR";
 espaco.append(botao_espaco);
 
 const enterButton = document.createElement("button");
@@ -138,8 +139,8 @@ document.onkeydown = function (evt) {
     if(evt.key === "Enter"){
         checkGuess();
     } else if (evt.key === "Backspace") {
-        handleBackspace()
+        espaco_lidar()
     } else {
-        handleKeyboardOnClick(evt.key.toUpperCase())
+        indice_teclado(evt.key.toUpperCase())
     }
 }

@@ -14,7 +14,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  background: linear-gradient(45deg, #223843, #e8eddf, #223843, #D3D3D3);
+  background-color: #252525;
   background-size: 400% 400%;
   animation: fundo 40s ease infinite;
 }
@@ -24,7 +24,7 @@ body h2 {
 }
 
 main {
-  background-color: #223843;
+  background-color: #252525;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
@@ -42,7 +42,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding:15px 7%;
-  border-bottom: .10px solid #F2E205;
+  border-bottom: .10px solid #f5cb5c;
   position: fixed;
   top:0; left: 0; right: 0;
   z-index: 1000;
@@ -55,12 +55,12 @@ main {
 .header .navbar a{
   margin:0 10px;
   font-size: 16px;
-  color: #F2E205;
+  color: #f5cb5c;
 }
 
 .header .navbar a:hover{
   color: #8b8b8b;
-  border-bottom: .10px solid #F2E205;
+  border-bottom: .10px solid #f5cb5c;
   padding-bottom: .50px;
 }
 
@@ -90,6 +90,16 @@ button {
   cursor: pointer;
   background-color: #e8eddf;
   color: black;
+}
+
+button:hover {
+  background-color: #f5cb5c;
+  letter-spacing: 1px;
+  animation-name: botao;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .finish {

@@ -89,13 +89,15 @@ body {
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 1rem;
+    text-align: center;
     justify-content: center;
     display: flex;
 }
 
 
 .linhas_teclado.notAlphabetic {
-    width:100%
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .linhas_teclado:not(.notAlphabetic) button {
@@ -111,4 +113,30 @@ body {
 
 .titulo {
     color: white;
+}
+
+button {
+    width: 100px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #f5cb5c;
+    letter-spacing: 1px;
+    animation-name: botao;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes botao {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.10);
+    }
 }
