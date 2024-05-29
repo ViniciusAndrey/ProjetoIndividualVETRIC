@@ -76,12 +76,7 @@
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "O Email deve ter pelo menos 1";
             return false;
-        } else if (senhaVar.length <= 6) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "A senha deve conter pelo menos 6 caracteres";
-            return false;
-        }
-        else {
+        } else {
             setInterval(sumirMensagem, 5000)
         }
 

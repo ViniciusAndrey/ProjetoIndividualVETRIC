@@ -22,4 +22,12 @@ export default [
       { option: "Não", correct: true },
     ],
   },
+  {
+    question: "Qual é a melhor época para começar a investir?",
+    answers: [
+      { option: "Investimentos em renda fixa oferecem retornos predefinidos e previsíveis", correct: true },
+      { option: "ERRADO", correct: false },
+      { option: "ERRADO", correct: false },
+    ],
+  },
 ];

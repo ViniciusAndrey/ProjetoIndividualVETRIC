@@ -139,7 +139,7 @@ body {
 }
 
 .textos > input::placeholder {
-    color: 212529;
+    color: #212529;
 }
 
 .btn {

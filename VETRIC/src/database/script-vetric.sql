@@ -20,7 +20,7 @@ CREATE TABLE aviso (
 
 create table ranking (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	pontuação int,
+	pontuacao int,
     dt datetime default current_timestamp,
     fk_usuario int,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)

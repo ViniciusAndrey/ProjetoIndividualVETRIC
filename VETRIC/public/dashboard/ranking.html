@@ -70,10 +70,11 @@
             <div class="investimentos">
                 <div class="cartao">
                     <div class="canvas_chart">
-                        <canvas id="grafico_pontuacao" style="width: 1000px;">
+                        <canvas id="grafico_pontuacao" style="width: 1000px; height: 500px; display: fixed;">
             
                         </canvas>
                 </div>
+            </div>
             </div>
         </section>
         </div>
@@ -84,8 +85,6 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    let proximaAtualizacao;
 
     fetch("../quiz/mostrar_pontuacao", {
         method: "POST",
