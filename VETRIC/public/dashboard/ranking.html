@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTech | Dashboards</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboard.css">
+    <script src="../js/sessao.js"></script>
+    <script src="./../js/alerta.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<!-- <body onload=" atualizarFeed()"> -->
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="logo">
+                        <img src="./../assets/imgs/av4.png" alt="">
+                        <div class="hello">
+                            <span class="nav-item" id="b_usuario">usuário</span>
+                        </div>
+                    </a></li>
+                <li><a href="home.html">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="nav-item">Home</span>
+                    </a></li>
+                <li><a href="ranking.html">
+                        <i class="fas fa-ranking-star"></i>
+                        <span class="nav-item">Ranking</span>
+                    </a></li>
+                <li><a href="mural.html">
+                        <i class="fas fa-comments"></i>
+                        <span class="nav-item">Comentários</span>
+                    </a></li>
+                <li><a href="ajuda.html">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="nav-item">Ajuda</span>
+                    </a></li>
+                <li><a href="./../index.html" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Sair</span>
+                    </a></li>
+            </ul>
+        </nav>
+        <section class="main">
+            <div class="main-cima">
+                <h1>Ranking</h1>
+            </div>
+            <div class="investimentos">
+                <div class="cartao">
+                    <div class="canvas_chart">
+                        <canvas id="grafico_pontuacao" style="width: 1000px;">
+            
+                        </canvas>
+                </div>
+            </div>
+        </section>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    let proximaAtualizacao;
+
+    fetch("../quiz/mostrar_pontuacao", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idUsuarioServer: sessionStorage.ID_USUARIO,
+        }),
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(function (resultado) {
+                var lista_pontuacoes = resultado.pontuacoes
+                var lista_horario = resultado.horario
+                var lista_pontuacoes_limitado = []
+                var lista_horario_limitado = []
+
+                if (lista_pontuacoes.length < 10) {
+                    lista_pontuacoes_limitado = lista_pontuacoes
+                    lista_horario_limitado = lista_horario
+                } else {
+                    for (var index = lista_pontuacoes.length - 10; index < lista_pontuacoes.length; index++) {
+                        lista_pontuacoes_limitado.push(lista_pontuacoes[index])
+                        lista_horario_limitado.push(lista_horario[index])
+                    }
+                }
+
+                const ctx = document.getElementById('grafico_pontuacao').getContext("2d");
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: lista_horario_limitado,
+                        datasets: [{
+                            label: 'Pontuações Gerais',
+                            data: lista_pontuacoes_limitado,
+                            borderWidth: 1,
+                            backgroundColor: "white"
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: "GRAFICO GERAL"
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: {
+                                    stepSize: 1
+                                }, 
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+        }
+    })
+</script>

@@ -139,7 +139,7 @@ span {
 
 .sobre {
     min-height: 80vh;
-    background: linear-gradient(-60deg, #cfdbd5, #e8eddf, #223843, #b4b4b4);
+    background: linear-gradient(-60deg, #cfdbd5, #e8eddf, #f5cb5c, #b4b4b4);
     background-size: 600% 600%;
     animation: Animacao 10s ease infinite alternate;
     display: flex;

@@ -18,5 +18,19 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
+create table ranking (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	pontuação int,
+    dt datetime default current_timestamp,
+    fk_usuario int,
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+);
+
+drop table aquario;
+drop table medida;
+
 select * from usuario;
 select * from aviso;
+select * from ranking;
+
+insert into ranking (pontuacao, fk_usuario) values (4, 13);

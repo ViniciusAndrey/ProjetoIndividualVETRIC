@@ -48,6 +48,26 @@ function finish() {
 
   conteudo.style.display = "none";
   conteudoFinish.style.display = "flex";
+
+  fetch("../quiz/inserir_pontuacao", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    // crie um atributo que recebe o valor recuperado aqui
+    // Agora vá para o arquivo routes/usuario.js
+    idUsuarioServer: sessionStorage.ID_USUARIO,
+    pontuacaoServer: questao_correta
+  }),
+  })
+  .then(function(resposta){
+    if(!resposta.ok) {
+      console.log("ERRO AO INSERIR OS DADOS")
+    }
+  }) .catch(function(erro) {
+    console.error("ERRO", erro)
+  })
 }
 
 function carregar_questao() {
