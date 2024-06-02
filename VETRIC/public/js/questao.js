@@ -1,5 +1,9 @@
+
+// Criar um modulo e importar um outro arquivo que no caso é o "Quiz.HTML"
 export default [
   {
+
+    // Json!
     question: "Qual é a diferença entre renda fixa e renda variável?",
     answers: [
       { option: "Investimentos em renda fixa oferecem retornos predefinidos e previsíveis", correct: true },
@@ -8,6 +12,7 @@ export default [
     ],
   },
   {
+    // Json!
     question: "O que significam liquidez e rentabilidade?",
     answers: [
       { option: "Liquidez é um indicador de risco do investimento.", correct: false },
@@ -16,6 +21,7 @@ export default [
     ],
   },
   {
+    // Json!
     question: "Existe valor mínimo para começar a investir?",
     answers: [
       { option: "Sim", correct: false },
@@ -23,6 +29,7 @@ export default [
     ],
   },
   {
+    // Json!
     question: "Qual é a melhor época para começar a investir?",
     answers: [
       { option: "Investimentos em renda fixa oferecem retornos predefinidos e previsíveis", correct: true },

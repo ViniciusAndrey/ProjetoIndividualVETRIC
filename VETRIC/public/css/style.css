@@ -239,6 +239,8 @@ span {
     display: inline-block;
 }
 
+/* Forma absoluta que usa o "Body para se mover" */
+
 .overlay {
     position: absolute;
     top: 0;
@@ -257,13 +259,13 @@ span {
 
 .overlay p {
     padding: 10px;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
     text-align: center;
 }
 
-.overlay .caption {
-    font-size: 20px;
+.overlay .cima {
+    font-size: 30px;
 }
 
 #img1 {

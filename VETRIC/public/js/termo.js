@@ -18,13 +18,14 @@ var varrecoMap = {};
 for (var index = 0; index < varreco.length; index++) {
   varrecoMap[varreco[index]] = index;
 }
-const guesses = [];
+const usuario = [];
 
 for (var indice_linha = 0; indice_linha < linha; indice_linha++) {
-  guesses[indice_linha] = new Array(colunas);
-  const tileRow = document.createElement("div");
-  tileRow.setAttribute("id", "row" + indice_linha);
-  tileRow.setAttribute("class", "tile-row");
+  usuario[indice_linha] = new Array(colunas);
+  const linha3 = document.createElement("div");
+    // SetAttribute Adiciona um novo atributo ou modifica o valor
+  linha3.setAttribute("id", "row" + indice_linha);
+  linha3.setAttribute("class", "tile-row");
   for (var indice_coluna = 0; indice_coluna < colunas; indice_coluna++) {
     const tileColumn = document.createElement("div");
     tileColumn.setAttribute("id", "row" + indice_linha + "column" + indice_coluna);
@@ -32,14 +33,15 @@ for (var indice_linha = 0; indice_linha < linha; indice_linha++) {
       "class",
       indice_linha == 0 ? "tile-column typing" : "tile-column disabled"
     );
-    tileRow.append(tileColumn);
-    guesses[indice_linha][indice_coluna] = "";
+    // Append = Acrescentar uma linha
+    linha3.append(tileColumn);
+    usuario[indice_linha][indice_coluna] = "";
   }
-  tiles.append(tileRow);
+  tiles.append(linha3);
 }
 
-const checkGuess = () => {
-  const guess = guesses[currentRow].join("");
+const chk_usuario = () => {
+  const guess = usuario[currentRow].join("");
   if (guess.length !== colunas) {
     return;
   }
@@ -48,43 +50,43 @@ const checkGuess = () => {
   for (var index = 0; index < colunas; index++) {
     const varter = guess[index];
     if (varrecoMap[varter] === undefined) {
-        posicao_atual[index].classList.add("wrong")
+      posicao_atual[index].classList.add("wrong")
     } else {
-        if(varrecoMap[varter] === index) {
-            posicao_atual[index].classList.add("right")
-        } else {
-            posicao_atual[index].classList.add("displaced")
-        }
+      if (varrecoMap[varter] === index) {
+        posicao_atual[index].classList.add("right")
+      } else {
+        posicao_atual[index].classList.add("displaced")
+      }
     }
   }
 
-  if(guess === varreco) {
-      window.alert("Você acertou a palavra!")
-      return
+  if (guess === varreco) {
+    window.alert("Você acertou a palavra!")
+    return
   } {
-      if(currentRow === linha -1) {
-          window.alert("Errou!")
-      } else {
-          nova_rodada()
-      }
+    if (currentRow === linha - 1) {
+      window.alert("Errou!")
+    } else {
+      nova_rodada()
+    }
   }
 };
 
 const nova_rodada = () => {
-    var typingColumns = document.querySelectorAll(".typing")
-    for (var index = 0; index < typingColumns.length; index++) {
-        typingColumns[index].classList.remove("typing")
-        typingColumns[index].classList.add("disabled")
-    }
-    currentRow++
-    coluna_atual=0
+  var typingColumns = document.querySelectorAll(".typing")
+  for (var index = 0; index < typingColumns.length; index++) {
+    typingColumns[index].classList.remove("typing")
+    typingColumns[index].classList.add("disabled")
+  }
+  currentRow++
+  coluna_atual = 0
 
-    const linha_atual = document.querySelector("#row"+currentRow)
-    var posicao_atual = linha_atual.querySelectorAll(".tile-column")
-    for (var index = 0; index < posicao_atual.length; index++) {
-        posicao_atual[index].classList.remove("disabled")
-        posicao_atual[index].classList.add("typing")
-    }
+  const linha_atual = document.querySelector("#row" + currentRow)
+  var posicao_atual = linha_atual.querySelectorAll(".tile-column")
+  for (var index = 0; index < posicao_atual.length; index++) {
+    posicao_atual[index].classList.remove("disabled")
+    posicao_atual[index].classList.add("typing")
+  }
 }
 
 const indice_teclado = (key) => {
@@ -95,7 +97,7 @@ const indice_teclado = (key) => {
     "#row" + currentRow + "column" + coluna_atual
   );
   currentTile.textContent = key;
-  guesses[currentRow][coluna_atual] = key;
+  usuario[currentRow][coluna_atual] = key;
   coluna_atual++;
 };
 
@@ -114,13 +116,13 @@ criar_linha_teclado(segunda_coluna, segunda_linha);
 criar_linha_teclado(terceira_coluna, terceira_linha);
 
 const espaco_lidar = () => {
-  if(coluna_atual === 0){
-      return
+  if (coluna_atual === 0) {
+    return
   }
 
   coluna_atual--
-  guesses[currentRow][coluna_atual] = ""
-  const tile = document.querySelector("#row"+currentRow+"column"+coluna_atual)
+  usuario[currentRow][coluna_atual] = ""
+  const tile = document.querySelector("#row" + currentRow + "column" + coluna_atual)
   tile.textContent = ""
 };
 
@@ -130,17 +132,17 @@ botao_espaco.textContent = "APAGAR";
 espaco.append(botao_espaco);
 
 const enterButton = document.createElement("button");
-enterButton.addEventListener("click", checkGuess);
+enterButton.addEventListener("click", chk_usuario);
 enterButton.textContent = "ENTER";
 espaco.append(enterButton);
 
 document.onkeydown = function (evt) {
-    evt = evt || window.evt
-    if(evt.key === "Enter"){
-        checkGuess();
-    } else if (evt.key === "Backspace") {
-        espaco_lidar()
-    } else {
-        indice_teclado(evt.key.toUpperCase())
-    }
+  evt = evt || window.evt
+  if (evt.key === "Enter") {
+    chk_usuario();
+  } else if (evt.key === "Backspace") {
+    espaco_lidar()
+  } else {
+    indice_teclado(evt.key.toUpperCase())
+  }
 }

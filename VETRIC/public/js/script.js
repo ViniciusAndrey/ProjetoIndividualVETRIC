@@ -1,3 +1,5 @@
+// Const que é uma variavel fixa, onde não poderá mudar
+
 const question = document.querySelector(".question");
 const respostas = document.querySelector(".respostas");
 const span_quantidade = document.querySelector(".spanQtd");
@@ -5,6 +7,8 @@ const textofinal = document.querySelector(".finish span");
 const conteudo = document.querySelector(".content");
 const conteudoFinish = document.querySelector(".finish");
 const btnReiniciar = document.querySelector(".finish button");
+
+// Importantando as questoes do questao.js
 
 import questions from "./questao.js";
 
