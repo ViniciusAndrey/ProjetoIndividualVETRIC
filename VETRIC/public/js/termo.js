@@ -12,7 +12,7 @@ const linha = 5;
 const colunas = 5;
 var currentRow = 0;
 var coluna_atual = 0;
-var varreco = "EXITO";
+var varreco = "BOLSA";
 var varrecoMap = {};
 
 for (var index = 0; index < varreco.length; index++) {

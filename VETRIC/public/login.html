@@ -64,10 +64,15 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
+        mensagem_erro.innerHTML = "ERRO"
+
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha todos os campos!";
             return false;
+        } else if (emailVar == false || senhaVar == false) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Senha ou Email Errado";
         } else if(emailVar.indexOf("@") < 0) {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "O Email deve ter um @";
@@ -79,6 +84,8 @@
         } else {
             setInterval(sumirMensagem, 5000)
         }
+
+        
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -99,6 +106,7 @@
 
             if (resposta.ok) {
                 console.log(resposta);
+                mensagem_erro.innerHTML = "Login efetuado com sucesso!"
 
                 resposta.json().then(json => {
                     console.log(json);
